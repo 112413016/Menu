@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee Login Form</title>
+</head>
+<body>
+
+<h2 align="center">Employee Login Form</h2>
+
+<form action="process.php" method="post">
+
+<table border="1" cellpadding="8" align="center">
+
+<tr>
+    <td>Employee Name</td>
+    <td><input type="text" name="name" required></td>
+</tr>
+
+<tr>
+    <td>User Name</td>
+    <td><input type="text" name="username" required></td>
+</tr>
+
+<tr>
+    <td>Password</td>
+    <td><input type="password" name="password" required></td>
+</tr>
+
+<tr>
+    <td>Gender</td>
+    <td>
+        <input type="radio" name="gender" value="Male">Male
+        <input type="radio" name="gender" value="Female">Female
+    </td>
+</tr>
+
+<tr>
+    <td>Skills</td>
+    <td>
+        <input type="checkbox" name="skills[]" value="HTML">HTML
+        <input type="checkbox" name="skills[]" value="PHP">PHP
+        <input type="checkbox" name="skills[]" value="CSS">CSS
+    </td>
+</tr>
+
+<tr>
+    <td>Address</td>
+    <td>
+        <textarea name="address" rows="4" cols="25"></textarea>
+    </td>
+</tr>
+
+<tr>
+    <td colspan="2" align="center">
+        <input type="submit" value="Login">
+        <input type="reset" value="Clear">
+    </td>
+</tr>
+
+</table>
+
+</form>
+
+</body>
+</html>
