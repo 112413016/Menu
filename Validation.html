@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Form</title>
+</head>
+<body>
+
+<h2>Student Registration Form</h2>
+
+<form action="student.php" method="post">
+
+    Name:
+    <input type="text" name="name" required><br><br>
+
+    Age:
+    <input type="number" name="age" min="18" max="30" required><br><br>
+
+    Email:
+    <input type="email" name="email" required><br><br>
+
+    Phone:
+    <input type="text" name="phone" pattern="[0-9]{10}" required>
+    <br><small>Enter 10-digit mobile number</small><br><br>
+
+    Gender:
+    <input type="radio" name="gender" value="Male" required> Male
+    <input type="radio" name="gender" value="Female"> Female
+    <br><br>
+
+    <input type="submit" value="Submit">
+
+</form>
+
+</body>
+</html>
