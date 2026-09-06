@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sweets Crumbs - Cake Order</title>
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff8f0;
+            color: #4a2c2a;
+        }
+
+        header {
+            background-color: #f7b6c2;
+            text-align: center;
+            padding: 30px;
+        }
+
+        header h1 {
+            font-size: 40px;
+            margin: 0;
+        }
+
+        header p {
+            font-size: 20px;
+        }
+
+        .container {
+            width: 85%;
+            margin: auto;
+        }
+
+        section {
+            background-color: white;
+            margin: 25px 0;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #d94f70;
+            text-align: center;
+        }
+
+        h3 {
+            color: #b23a48;
+            font-size: 24px;
+        }
+
+        p {
+            font-size: 17px;
+            line-height: 1.7;
+        }
+
+        .cakes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .cake {
+            background-color: #fff0f3;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .cake:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        ul {
+            font-size: 17px;
+            line-height: 2;
+        }
+
+        .offer {
+            background-color: #ffe066;
+            text-align: center;
+            padding: 20px;
+            border-radius: 12px;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .navigation {
+            text-align: center;
+            margin: 30px;
+        }
+
+        .navigation a {
+            display: inline-block;
+            background-color: #d94f70;
+            color: white;
+            text-decoration: none;
+            padding: 12px 25px;
+            margin: 5px;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        .navigation a:hover {
+            background-color: #b23a48;
+        }
+
+        /* ORDER FORM */
+
+        .order-box {
+            width: 450px;
+            max-width: 90%;
+            margin: 30px auto;
+            background-color: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 0 10px gray;
+        }
+
+        .order-box h1 {
+            text-align: center;
+            color: #d63384;
+        }
+
+        .order-box h2 {
+            text-align: center;
+            color: #b23a48;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0 15px;
+            box-sizing: border-box;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            width: auto;
+        }
+
+        input[type="submit"] {
+            background-color: #d63384;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #ad1457;
+        }
+
+        footer {
+            background-color: #f7b6c2;
+            text-align: center;
+            padding: 25px;
+            margin-top: 30px;
+        }
+
+        footer h2 {
+            color: #4a2c2a;
+        }
+    </style>
+</head>
+
+<body>
+
+
+<!-- ================================================= -->
+<!--                    PAGE 1                         -->
+<!-- ================================================= -->
+
+<div id="page1">
+
+    <header>
+        <h1>🍰 Sweets Crumbs 🍰</h1>
+        <p>Freshly Baked Happiness</p>
+    </header>
+
+    <div class="container">
+
+        <!-- Welcome -->
+        <section>
+
+            <h2>🍰 Welcome to Sweets Crumbs</h2>
+
+            <p>
+                Welcome to <strong>Sweets Crumbs</strong>, where every cake
+                is baked with love, creativity, and the finest ingredients.
+                We believe that every celebration deserves something sweet,
+                beautiful, and memorable.
+            </p>
+
+        </section>
+
+
+        <!-- Our Cakes -->
+        <section>
+
+            <h2>🎂 Our Cakes</h2>
+
+            <p>
+                At Sweets Crumbs, we offer a delicious collection of cakes
+                for every taste and occasion. From rich chocolate cakes to
+                refreshing fruit cakes, our cakes are soft, creamy, and
+                freshly baked.
+            </p>
+
+            <div class="cakes">
+
+                <div class="cake">
+                    <h3>🍫 Chocolate Cake</h3>
+
+                    <p>
+                        A rich and delicious chocolate cake layered with
+                        smooth chocolate cream. Perfect for chocolate lovers
+                        and special celebrations.
+                    </p>
+                </div>
+
+
+                <div class="cake">
+                    <h3>🍓 Strawberry Cake</h3>
+
+                    <p>
+                        A soft and flavorful cake filled with strawberry
+                        cream and delicious strawberry pieces.
+                    </p>
+                </div>
+
+
+                <div class="cake">
+                    <h3>🍦 Vanilla Cake</h3>
+
+                    <p>
+                        A classic vanilla cake with soft layers and creamy
+                        frosting. Simple, elegant, and delicious.
+                    </p>
+                </div>
+
+
+                <div class="cake">
+                    <h3>❤️ Red Velvet Cake</h3>
+
+                    <p>
+                        A soft red velvet cake with smooth cream frosting
+                        and a beautiful finish.
+                    </p>
+                </div>
+
+
+                <div class="cake">
+                    <h3>🍍 Pineapple Cake</h3>
+
+                    <p>
+                        A light and refreshing cake made with delicious
+                        pineapple flavor and creamy frosting.
+                    </p>
+                </div>
+
+
+                <div class="cake">
+                    <h3>🥭 Mango Cake</h3>
+
+                    <p>
+                        A sweet and creamy mango-flavored cake made with
+                        delicious mango filling.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Next Page -->
+        <div class="navigation">
+
+            <a href="#page2">
+                Next Page ➡️
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- ================================================= -->
+<!--                    PAGE 2                         -->
+<!--                 ORDER FORM                        -->
+<!-- ================================================= -->
+
+<div id="page2">
+
+    <header>
+
+        <h1>🎂 Sweets Crumbs - Cake Order 🎂</h1>
+
+        <p>
+            Order Your Favourite Cake
+        </p>
+
+    </header>
+
+
+    <div class="order-box">
+
+        <h1>🍰 Sweets Crumbs 🍰</h1>
+
+        <h2>🎂 Cake Order Form</h2>
+
+
+        <form action="order.php" method="POST">
+
+
+            <!-- Name -->
+
+            <label>Name:</label>
+
+            <input
+                type="text"
+                name="name"
+                pattern="[A-Za-z ]{3,30}"
+                title="Name should contain only letters and spaces (3-30 characters)"
+                required
+            >
+
+
+            <!-- Phone -->
+
+            <label>Phone Number:</label>
+
+            <input
+                type="tel"
+                name="phone"
+                pattern="[0-9]{10}"
+                title="Enter exactly 10 digits"
+                required
+            >
+
+
+            <!-- Email -->
+
+            <label>Email:</label>
+
+            <input
+                type="email"
+                name="email"
+                pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[A-Za-z]{2,}"
+                title="Enter a valid email address"
+                required
+            >
+
+
+            <!-- Cake -->
+
+            <label>Cake Type:</label>
+
+            <select name="cake" required>
+
+                <option value="">
+                    -- Select Cake --
+                </option>
+
+                <option value="Chocolate Cake">
+                    🍫 Chocolate Cake
+                </option>
+
+                <option value="Strawberry Cake">
+                    🍓 Strawberry Cake
+                </option>
+
+                <option value="Vanilla Cake">
+                    🍦 Vanilla Cake
+                </option>
+
+                <option value="Red Velvet Cake">
+                    ❤️ Red Velvet Cake
+                </option>
+
+                <option value="Pineapple Cake">
+                    🍍 Pineapple Cake
+                </option>
+
+                <option value="Mango Cake">
+                    🥭 Mango Cake
+                </option>
+
+            </select>
+
+
+            <!-- Quantity -->
+
+            <label>Quantity:</label>
+
+            <input
+                type="number"
+                name="quantity"
+                min="1"
+                max="20"
+                required
+            >
+
+
+            <!-- Delivery Date -->
+
+            <label>Delivery Date:</label>
+
+            <input
+                type="date"
+                name="delivery_date"
+                required
+            >
+
+
+            <!-- Order Type -->
+
+            <label>Order Type:</label>
+
+            <br>
+
+            <input
+                type="radio"
+                name="order_type"
+                value="Delivery"
+                required
+            >
+
+            Delivery
+
+
+            <input
+                type="radio"
+                name="order_type"
+                value="Pickup"
+            >
+
+            Pickup
+
+            <br><br>
+
+
+            <!-- Message -->
+
+            <label>
+                Special Message on Cake:
+            </label>
+
+            <textarea
+                name="message"
+                pattern="[A-Za-z0-9 ,.?!-]{0,100}"
+                title="Use letters, numbers and basic punctuation only"
+            ></textarea>
+
+
+            <!-- Address -->
+
+            <label>Address:</label>
+
+            <textarea
+                name="address"
+                minlength="10"
+                maxlength="200"
+                required
+            ></textarea>
+
+
+            <!-- Submit -->
+
+            <input
+                type="submit"
+                value="🍰 Place Order"
+            >
+
+        </form>
+
+    </div>
+
+
+    <!-- Previous Page -->
+
+    <div class="navigation">
+
+        <a href="#page1">
+            ⬅️ Previous Page
+        </a>
+
+    </div>
+
+
+    <footer>
+
+        <h2>🍰 Sweets Crumbs</h2>
+
+        <p>
+            Fresh Cakes • Sweet Memories • Happy Moments
+        </p>
+
+        <p>
+            Thank you for choosing Sweets Crumbs! ❤️
+        </p>
+
+    </footer>
+
+</div>
+
+
+</body>
+              </html>
+<?php
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    $name = $_POST["name"];
+    $phone = $_POST["phone"];
+    $email = $_POST["email"];
+    $cake = $_POST["cake"];
+    $quantity = $_POST["quantity"];
+    $delivery_date = $_POST["delivery_date"];
+    $order_type = $_POST["order_type"];
+    $message = $_POST["message"];
+    $address = $_POST["address"];
+
+    // Name validation
+    if (!preg_match("/^[A-Za-z ]{3,30}$/", $name)) {
+        die("Invalid name. Use only letters and spaces.");
+    }
+
+    // Phone validation
+    if (!preg_match("/^[0-9]{10}$/", $phone)) {
+        die("Invalid phone number. Enter exactly 10 digits.");
+    }
+
+    // Email validation
+    if (!preg_match("/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[A-Za-z]{2,}$/", $email)) {
+        die("Invalid email address.");
+    }
+
+    // Quantity validation
+    if (!preg_match("/^[1-9][0-9]?$/", $quantity) || $quantity > 20) {
+        die("Quantity must be between 1 and 20.");
+    }
+
+    // Display order details
+    echo "<h1>🍰 Sweets Crumbs 🍰</h1>";
+    echo "<h2>✅ Order Successfully Placed!</h2>";
+
+    echo "<p><b>Name:</b> " . htmlspecialchars($name) . "</p>";
+    echo "<p><b>Phone:</b> " . htmlspecialchars($phone) . "</p>";
+    echo "<p><b>Email:</b> " . htmlspecialchars($email) . "</p>";
+    echo "<p><b>Cake:</b> " . htmlspecialchars($cake) . "</p>";
+    echo "<p><b>Quantity:</b> " . htmlspecialchars($quantity) . "</p>";
+    echo "<p><b>Delivery Date:</b> " . htmlspecialchars($delivery_date) . "</p>";
+    echo "<p><b>Order Type:</b> " . htmlspecialchars($order_type) . "</p>";
+    echo "<p><b>Special Message:</b> " . htmlspecialchars($message) . "</p>";
+    echo "<p><b>Address:</b> " . htmlspecialchars($address) . "</p>";
+
+    echo "<h3>🎂 Thank you for ordering from Sweets Crumbs!</h3>";
+
+} else {
+    echo "Invalid request.";
+}
+
+?>
+              
