@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sweets Crumbs - Cake Order</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff0f5;
+            padding: 30px;
+        }
+
+        .order-box {
+            width: 450px;
+            margin: auto;
+            background-color: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 0 10px gray;
+        }
+
+        h1 {
+            text-align: center;
+            color: #d63384;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0 15px;
+            box-sizing: border-box;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            width: auto;
+        }
+
+        input[type="submit"] {
+            background-color: #d63384;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #ad1457;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="order-box">
+
+    <h1>🍰 Sweets Crumbs 🍰</h1>
+    <h2>🎂 Cake Order Form</h2>
+
+    <form action="order.php" method="POST">
+
+        <label>Name:</label>
+        <input type="text"
+               name="name"
+               pattern="[A-Za-z ]{3,30}"
+               title="Name should contain only letters and spaces (3-30 characters)"
+               required>
+
+        <label>Phone Number:</label>
+        <input type="tel"
+               name="phone"
+               pattern="[0-9]{10}"
+               title="Enter exactly 10 digits"
+               required>
+
+        <label>Email:</label>
+        <input type="email"
+               name="email"
+               pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[A-Za-z]{2,}"
+               title="Enter a valid email address"
+               required>
+
+        <label>Cake Type:</label>
+        <select name="cake" required>
+            <option value="">-- Select Cake --</option>
+            <option value="Chocolate Cake">🍫 Chocolate Cake</option>
+            <option value="Vanilla Cake">🍦 Vanilla Cake</option>
+            <option value="Red Velvet Cake">❤️ Red Velvet Cake</option>
+            <option value="Black Forest Cake">🍒 Black Forest Cake</option>
+            <option value="Fruit Cake">🍓 Fruit Cake</option>
+        </select>
+
+        <label>Quantity:</label>
+        <input type="number"
+               name="quantity"
+               min="1"
+               max="20"
+               required>
+
+        <label>Delivery Date:</label>
+        <input type="date" name="delivery_date" required>
+
+        <label>Order Type:</label><br>
+
+        <input type="radio" name="order_type" value="Delivery" required>
+        Delivery
+
+        <input type="radio" name="order_type" value="Pickup">
+        Pickup
+
+        <br><br>
+
+        <label>Special Message on Cake:</label>
+        <textarea name="message"
+                  pattern="[A-Za-z0-9 ,.?!-]{0,100}"
+                  title="Use letters, numbers and basic punctuation only"></textarea>
+
+        <label>Address:</label>
+        <textarea name="address"
+                  minlength="10"
+                  maxlength="200"
+                  required></textarea>
+
+        <input type="submit" value="🍰 Place Order">
+
+    </form>
+
+</div>
+
+</body>
+</html>
