@@ -8,6 +8,10 @@
     <title>Sweets Crumbs - Cake Order</title>
 
     <style>
+        #page2 {
+    display: none;
+        }
+
         html {
             scroll-behavior: smooth;
         }
@@ -294,9 +298,9 @@
         <!-- Next Page -->
         <div class="navigation">
 
-            <a href="#page2">
-                Next Page ➡️
-            </a>
+           <a href="#" onclick="showPage2(); return false;">
+    Next Page ➡️
+</a>
 
         </div>
 
@@ -502,10 +506,9 @@
 
     <div class="navigation">
 
-        <a href="#page1">
-            ⬅️ Previous Page
-        </a>
-
+        <a href="#" onclick="showPage1(); return false;">
+    ⬅️ Previous Page
+</a>
     </div>
 
 
@@ -521,12 +524,29 @@
             Thank you for choosing Sweets Crumbs! ❤️
         </p>
 
-    </footer>
+</footer>
 
-</div>
+<div>
 
+<script>
+    function showPage2() {
+        document.getElementById("page1").style.display = "none";
+        document.getElementById("page2").style.display = "block";
+        window.scrollTo(0, 0);
+    }
+
+    function showPage1() {
+        document.getElementById("page2").style.display = "none";
+        document.getElementById("page1").style.display = "block";
+        window.scrollTo(0, 0);
+    }
+</script>
+    </div>
 
 </body>
-              </html>
+</html>
+
+
+
 
               
