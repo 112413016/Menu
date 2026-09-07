@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $address = $_POST["address"];
 
     // Name validation
-    if (!preg_match("/^[A-Za-z ]{3,30}$/", $name)) {
+    if (!preg_match("/^[A-Za-z ]{3,10}$/", $name)) {
         die("Invalid name. Use only letters and spaces.");
     }
 
