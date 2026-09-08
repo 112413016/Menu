@@ -299,15 +299,17 @@
 
             <label for="name">Name:</label>
 
-            <input
-                type="text"
-                id="name"
-                name="name"
-                pattern="[A-Za-z ]{3,10}"
-                title="Name must contain only letters and spaces. Numbers are not allowed."
-                required
-            >
-
+                    <input
+            type="text"
+            id="name"
+            name="name"
+            minlength="10"
+            maxlength="10"
+            pattern="[A-Za-z ]{10}"
+            title="Name must contain exactly 10 characters. Numbers are not allowed."
+            placeholder="Enter exactly 10 characters"
+            required
+        >
 
             <!-- PHONE -->
 
@@ -336,44 +338,39 @@
                 title="Please enter a valid email address."
                 required
             >
+         <!-- ================= CAKE ID ================= -->
+        <label for="cake_id">
+            Cake ID:
+        </label>
 
 
-            <!-- CAKE -->
-
-            <label for="cake">Cake Type:</label>
-
-            <select id="cake" name="cake" required>
-
-                <option value="">
-                    -- Select Cake --
-                </option>
-
-                <option value="Chocolate Cake">
-                    🍫 Chocolate Cake
-                </option>
-
-                <option value="Strawberry Cake">
-                    🍓 Strawberry Cake
-                </option>
-
-                <option value="Vanilla Cake">
-                    🍦 Vanilla Cake
-                </option>
-
-                <option value="Red Velvet Cake">
-                    ❤️ Red Velvet Cake
-                </option>
-
-                <option value="Pineapple Cake">
-                    🍍 Pineapple Cake
-                </option>
-
-                <option value="Mango Cake">
-                    🥭 Mango Cake
-                </option>
-
-            </select>
-
+        <select
+            id="cake_id"
+            name="cake_id"
+            required
+        >
+            <option value="">
+                -- Select Cake ID --
+            </option>
+            <option value="C001">
+                C001 - Chocolate Cake
+            </option>
+           <option value="C002">
+                C002 - Strawberry Cake
+            </option>
+            <option value="C003">
+                C003 - Vanilla Cake
+            </option>
+            <option value="C004">
+                C004 - Red Velvet Cake
+            </option>
+             <option value="C005">
+                C005 - Pineapple Cake
+            </option>
+            <option value="C006">
+                C006 - Mango Cake
+            </option>
+                    </select>
 
             <!-- QUANTITY -->
 
