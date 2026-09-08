@@ -528,7 +528,7 @@
 
 <div>
 
-<script>
+<script> 
     function showPage2() {
         document.getElementById("page1").style.display = "none";
         document.getElementById("page2").style.display = "block";
@@ -539,8 +539,65 @@
         document.getElementById("page2").style.display = "none";
         document.getElementById("page1").style.display = "block";
         window.scrollTo(0, 0);
-    }
+        <script>
+    // Form validation
+    document.querySelector("form").addEventListener("submit", function(event) {
+
+        let name = document.querySelector('input[name="name"]').value;
+        let phone = document.querySelector('input[name="phone"]').value;
+        let quantity = document.querySelector('input[name="quantity"]').value;
+        let deliveryDate = document.querySelector('input[name="delivery_date"]').value;
+
+        // Name validation
+        // Allows letters, numbers and spaces (3-10 characters)
+        if (!/^[A-Za-z0-9 ]{3,10}$/.test(name)) {
+            alert("Please enter a valid name (3-10 letters, numbers and spaces only).");
+            event.preventDefault();
+            return;
+        }
+
+        // Phone validation
+        // Allows exactly 10 digits
+        if (!/^[0-9]{10}$/.test(phone)) {
+            alert("Please enter exactly 10 digits for the phone number.");
+            event.preventDefault();
+            return;
+        }
+
+        // Quantity validation
+        if (quantity < 1 || quantity > 20) {
+            alert("Quantity must be between 1 and 20.");
+            event.preventDefault();
+            return;
+        }
+
+        // Delivery date validation
+        let today = new Date();
+        today.setHours(0, 0, 0, 0);
+
+        let selectedDate = new Date(deliveryDate);
+
+        if (selectedDate < today) {
+            alert("Please select today or a future delivery date.");
+            event.preventDefault();
+            return;
+        }
+
+        // Confirmation
+        let confirmOrder = confirm(
+            "🍰 Confirm your cake order?\n\n" +
+            "Name: " + name + "\n" +
+            "Phone: " + phone + "\n" +
+            "Quantity: " + quantity
+        );
+
+        if (!confirmOrder) {
+            event.preventDefault();
+        }
+    
+
 </script>
+     </script>
     </div>
 
 </body>
