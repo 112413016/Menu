@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sweets Crumbs - Customer Reviews</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #fff0f5, #ffe4ec);
+            color: #4a2630;
+        }
+
+        header {
+            background: #8b3a62;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 35px;
+        }
+
+        header p {
+            margin-top: 8px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 30px auto;
+        }
+
+        .review-box {
+            background: white;
+            padding: 25px;
+            border-radius: 18px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+            margin-bottom: 30px;
+        }
+
+        .review-box h2 {
+            text-align: center;
+            color: #8b3a62;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            margin-top: 7px;
+            border: 2px solid #e8b6c7;
+            border-radius: 10px;
+            font-size: 15px;
+        }
+
+        textarea {
+            height: 100px;
+            resize: none;
+        }
+
+        /* Star Rating */
+
+        .stars {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: flex-end;
+            margin-top: 10px;
+        }
+
+        .stars input {
+            display: none;
+        }
+
+        .stars label {
+            font-size: 35px;
+            color: #ccc;
+            cursor: pointer;
+            margin: 0 3px;
+        }
+
+        .stars input:checked ~ label,
+        .stars label:hover,
+        .stars label:hover ~ label {
+            color: #ffc107;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 20px;
+            padding: 14px;
+            border: none;
+            border-radius: 10px;
+            background: #8b3a62;
+            color: white;
+            font-size: 17px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #6d284b;
+            transform: scale(1.02);
+        }
+
+        #message {
+            text-align: center;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
+        /* Review Cards */
+
+        .reviews-title {
+            text-align: center;
+            color: #8b3a62;
+            margin-bottom: 20px;
+        }
+
+        .review-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-7px);
+        }
+
+        .card h3 {
+            margin-top: 0;
+            color: #8b3a62;
+        }
+
+        .rating {
+            color: #ffc107;
+            font-size: 22px;
+        }
+
+        .card p {
+            line-height: 1.5;
+        }
+
+        footer {
+            margin-top: 40px;
+            background: #8b3a62;
+            color: white;
+            text-align: center;
+            padding: 18px;
+        }
+
+        /* Animation */
+
+        .cake {
+            font-size: 45px;
+            text-align: center;
+            animation: bounce 1.5s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="cake">🎂</div>
+    <h1>Sweets Crumbs</h1>
+    <p>Share Your Sweet Experience!</p>
+</header>
+
+<div class="container">
+
+    <!-- Review Form -->
+
+    <div class="review-box">
+
+        <h2>⭐ Write a Review ⭐</h2>
+
+        <form id="reviewForm">
+
+            <label for="name">Your Name</label>
+            <input
+                type="text"
+                id="name"
+                placeholder="Enter your name"
+                pattern="[A-Za-z ]{3,30}"
+                title="Name should contain only letters and spaces"
+                required
+            >
+
+            <label>Your Rating</label>
+
+            <div class="stars">
+
+                <input type="radio" id="star5" name="rating" value="5">
+                <label for="star5">★</label>
+
+                <input type="radio" id="star4" name="rating" value="4">
+                <label for="star4">★</label>
+
+                <input type="radio" id="star3" name="rating" value="3">
+                <label for="star3">★</label>
+
+                <input type="radio" id="star2" name="rating" value="2">
+                <label for="star2">★</label>
+
+                <input type="radio" id="star1" name="rating" value="1">
+                <label for="star1">★</label>
+
+            </div>
+
+            <label for="review">Your Review</label>
+
+            <textarea
+                id="review"
+                placeholder="Tell us about your cake..."
+                minlength="5"
+                maxlength="200"
+                required
+            ></textarea>
+
+            <button type="submit">🍰 Submit Review</button>
+
+            <p id="message"></p>
+
+        </form>
+    </div>
+
+
+    <!-- Customer Reviews -->
+
+    <h2 class="reviews-title">💬 What Our Customers Say</h2>
+
+    <div class="review-list" id="reviewList">
+
+        <div class="card">
+            <h3>Priya</h3>
+            <div class="rating">★★★★★</div>
+            <p>
+                The chocolate cake was delicious and fresh.
+                The decoration was beautiful!
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Arun</h3>
+            <div class="rating">★★★★☆</div>
+            <p>
+                Amazing taste and excellent service.
+                I really enjoyed the cake.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Divya</h3>
+            <div class="rating">★★★★★</div>
+            <p>
+                Sweets Crumbs made my birthday special.
+                The cake looked beautiful and tasted great!
+            </p>
+        </div>
+
+    </div>
+
+</div>
+
+
+<footer>
+    <p>© 2026 Sweets Crumbs | Freshly Baked Happiness 🎂</p>
+</footer>
+
+
+<script>
+
+    document.getElementById("reviewForm").addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+        let name = document.getElementById("name").value.trim();
+        let review = document.getElementById("review").value.trim();
+
+        let rating = document.querySelector(
+            'input[name="rating"]:checked'
+        );
+
+        let message = document.getElementById("message");
+
+        // Name validation
+
+        if (!/^[A-Za-z ]{3,30}$/.test(name)) {
+            message.style.color = "red";
+            message.textContent =
+                "Please enter a valid name.";
+            return;
+        }
+
+        // Rating validation
+
+        if (!rating) {
+            message.style.color = "red";
+            message.textContent =
+                "Please select a star rating.";
+            return;
+        }
+
+        // Review validation
+
+        if (review.length < 5) {
+            message.style.color = "red";
+            message.textContent =
+                "Review must contain at least 5 characters.";
+            return;
+        }
+
+        // Create new review card
+
+        let card = document.createElement("div");
+        card.className = "card";
+
+        let stars = "★".repeat(Number(rating.value)) +
+                    "☆".repeat(5 - Number(rating.value));
+
+        card.innerHTML = `
+            <h3>${name}</h3>
+            <div class="rating">${stars}</div>
+            <p>${review}</p>
+        `;
+
+        document.getElementById("reviewList").prepend(card);
+
+        // Success message
+
+        message.style.color = "green";
+        message.textContent =
+            "🎉 Thank you! Your review has been submitted.";
+
+        // Clear form
+
+        document.getElementById("reviewForm").reset();
+
+    });
+
+</script>
+
+</body>
+</html>
