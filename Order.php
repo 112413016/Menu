@@ -59,7 +59,7 @@ if ($stmt->execute()) {
 
     echo "<p>Your order has been stored in the database.</p>";
 
-    echo "<a href='index.html'>🏠 Back to Home</a>";
+    echo "<a href='sweets1.html'>🏠 Back to Home</a>";
 
 } else {
 
