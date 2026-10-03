@@ -9,6 +9,5 @@ CREATE TABLE orders (
     delivery_date DATE NOT NULL,
     order_type VARCHAR(20) NOT NULL,
     message VARCHAR(100),
-    address VARCHAR(200) NOT NULL,
-    order_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    address VARCHAR(200) NOT NULL
 );
